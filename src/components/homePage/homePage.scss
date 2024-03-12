@@ -1,0 +1,572 @@
+.Icons {
+    color: #7626fb;
+    font-size: 2.5em;
+}
+
+.contactIcons {
+    color: #7626fb;
+}
+
+.ant-page-header-heading-title {
+    // color: white !important;
+    color: #2f2f2f;
+    font-size: 1.25em;
+
+}
+
+.ant-page-header-heading-extra .ant-btn {
+    // color: white;
+    color: #2f2f2f;
+    font-weight: 700;
+    border: 0px solid #7626fb;
+    background: #fff0;
+}
+
+.ant-page-header-heading-extra .ant-btn:hover {
+    color: #7626fb;
+    border-bottom: 1px solid #7626fb;
+}
+
+.ProfileImage {
+    width: 86%;
+}
+
+.CentreDivTech {
+    display: flex;
+    justify-content: center;
+
+}
+
+.centreItems Button {
+    margin-right: 22px;
+    height: 100%;
+    background: transparent;
+    color: #7626fb;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+
+
+//Project
+
+
+.ProjectCardOuter {
+    width: 83vw;
+    border-radius: 23px;
+    margin: 8vw;
+    // margin-left: 8vw;
+    background-color: rgb(255, 255, 255);
+    align-content: center;
+}
+
+
+//About
+
+.aboutDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aboutDetails p {
+    font-family: "M PLUS Rounded 1c";
+    font-size: 1rem;
+}
+
+//Header
+.aboutHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 0px;
+    font-size: 1.4rem;
+    font-family: "M PLUS Rounded 1c";
+    color: #000000b8;
+}
+
+.aboutHeader p {
+    font-size: 1rem;
+    font-family: "M PLUS Rounded 1c";
+    color: #000000;
+    font-weight: 500;
+}
+
+
+
+
+
+.viewButton {
+    background-color: #7626fb;
+    border-color: white;
+    color: white;
+}
+
+.viewButton :hover {
+    box-shadow: 2px #7626fb;
+}
+
+.viewButton .ant-btn:focus,
+.ant-btn:hover {
+    color: #7626fb;
+    border-color: #7626fb;
+}
+
+
+
+
+// HomePage
+
+.homePageBody {
+
+    // display: flex;
+    // flex-direction: row;
+    #homePageContent {
+        display: flex;
+        height: 70vh;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+
+        h2 {
+            color: #7626fb;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        .type {
+            color: #828080 !important;
+            font-weight: 500;
+            font-size: 1.25rem;
+            font-family: sans-serif;
+            margin-bottom: 1vh;
+        }
+
+        .viewButton {
+            background-color: #7626fb;
+            border-color: white;
+            color: white;
+            height: auto;
+            border-radius: 10px;
+            font-size: 1.25em;
+            font-weight: 500;
+            margin-top: 20px;
+        }
+    }
+
+    #homePageFooter {
+        display: flex;
+        height: 20vh;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+
+        .ant-card-bordered {
+            border: 1px solid #7626fb;
+            border-radius: 15px;
+            box-shadow: 4px 5px 9px 0px #8888889c;
+        }
+
+        .ant-card-body {
+            padding: 10px;
+            padding-left: 25px;
+            padding-right: 25px;
+        }
+    }
+}
+
+.ant-page-header-heading-title {
+    color: #5b5a5a;
+}
+
+.pageHeader {
+    font-family: "M PLUS Rounded 1c";
+    font-size: 1rem;
+    color: #5b5a5a !important;
+    background-color: white;
+    box-shadow: 1px 1px 12px 0px #7626fb45;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+//About
+.aboutPageRow {
+    // display: flex;
+    // flex-direction: column;
+    // align-content: center;
+    // justify-content: center;
+    // align-items: center;
+    background-color: #fafafa;
+    height: auto;
+
+    .aboutPageColumn {
+
+        display: flex;
+        flex-direction: column;
+        // align-content: center;
+        // justify-content: center;
+        align-items: center;
+
+        .aboutDetails {
+            margin-top: 4vh;
+            margin-bottom: 9vh;
+
+            h2 {
+                all: revert;
+                font-size: 1.85em;
+            }
+
+            p {
+                text-align: justify;
+                font-size: 0.8rem;
+                font-weight: 400;
+                color: #625959;
+                word-spacing: 2px;
+                line-height: 26px;
+            }
+
+            .ant-btn {
+                background-color: #9029fb;
+                color: white;
+                font-size: 1.15em;
+                height: auto;
+                width: 7vw;
+                font-weight: 600;
+                border-radius: 15px;
+            }
+
+            .skillIcons {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                span {
+                    margin: 16px;
+                    margin-top: 0px;
+                    margin-left: 0px;
+                    background-color: #cdcccc70;
+                    padding: 11px 20px;
+                    font-size: 1.1em;
+                    letter-spacing: 1px;
+                    font-weight: 500;
+                    border-radius: 7px;
+                }
+            }
+        }
+
+        h2 {
+            margin-top: 10vh;
+            font-size: 3em;
+            font-weight: 800;
+            letter-spacing: 5px;
+            color: #7626fb;
+            /* border-width: 42px; */
+            border-bottom: 2px solid #9a9a9a;
+        }
+
+        p {
+            text-align: center;
+            margin-top: 0vh;
+            margin-bottom: 2vh;
+            font-size: 1.1em;
+            // letter-spacing: 10px;
+        }
+    }
+
+}
+
+//Projects
+.projectHeading {
+    text-align: center;
+
+    h2 {
+        margin-top: 10vh;
+        font-size: 3em;
+        font-weight: 800;
+        letter-spacing: 5px;
+        // text-decoration: underline;
+        color: #7626fb;
+        /* border-width: 42px; */
+        // border-bottom: 2px solid #9a9a9a;
+    }
+
+    h2:after {
+        content: "";
+        /* This is necessary for the pseudo element to work. */
+        display: block;
+        /* This will put the pseudo element on its own line. */
+        margin: 0 auto;
+        /* This will center the border. */
+        width: 20%;
+        /* Change this to whatever width you want. */
+        padding-top: 10px;
+        /* This creates some space between the element and the border. */
+        border-bottom: 1px solid black;
+    }
+}
+
+.projectImage {
+
+    .skillIcons1 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        span {
+            margin: 16px;
+            margin-top: 0px;
+            margin-left: 0px;
+            background-color: #cdcccc70;
+            padding: 8px 15px;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            font-weight: 500;
+            border-radius: 7px;
+        }
+    }
+
+    #textCol {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: baseline;
+
+        h2 {
+            font-size: large;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: #454646;
+        }
+
+        p {
+            font-size: larger;
+            color: #5c6161;
+            letter-spacing: 1px;
+            word-spacing: 3px;
+        }
+
+        .ant-btn {
+            background-color: #7626fb;
+            color: white;
+            border-radius: 11px;
+            margin-top: 8px;
+        }
+    }
+
+    .ant-card {
+        margin-top: 10vh;
+        padding-top: 8vh;
+        border-radius: 20px;
+        box-shadow: 0px 2px 10px 0px #a4a4a4;
+    }
+
+    #projectCol1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    img {
+        height: 100%;
+        width: 80%;
+    }
+
+}
+
+// Contact
+.ContactHeight {
+    height: 100vh;
+}
+
+.contactHeading {
+    width: 100%;
+    text-align: center;
+}
+
+.ContactImageColumn {
+    background-color: #efcafe;
+    text-align: center;
+    border-radius: 22px;
+}
+
+.contactInput {
+    border-radius: 11px;
+    border: 2px solid #efcafe;
+    width: 62%;
+    line-height: 1.5rem;
+    padding-left: 10px;
+    margin-bottom: 16px;
+}
+
+.contactInput::selection {
+    background-color: white;
+}
+
+.contactInputDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.contactButton {
+    border-radius: 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    height: 100%;
+    background-color: #7626fb;
+    border-color: white;
+    color: white;
+    width: 15%;
+    padding: 5px;
+    font-family: 'M PLUS Rounded 1c';
+}
+
+.contactButtonDiv {
+    display: flex;
+    justify-content: center;
+}
+
+.contactCard {
+    margin-top: 10vh;
+    background-color: #fafafa;
+    height: auto;
+
+    .contactInputDiv {
+        margin-top: 2vh;
+    }
+
+    .contactInput {
+        border: 2px solid #b89fe1;
+        width: 62%;
+        height: 6vh;
+        background-color: #fafafa;
+    }
+
+    .ContactHeight {
+        height: auto;
+    }
+
+    .ProjectCardOuter {
+        width: auto;
+        margin: 4vw;
+    }
+}
+
+.Footer {
+    height: auto;
+    padding-top: 10vh;
+    background-color: #29006d;
+    color: white;
+
+    #footerLeft {
+        text-align: end;
+    }
+
+    h2 {
+        color: white;
+        font-weight: 700;
+        font-size: 1.35rem;
+        letter-spacing: 2px;
+    }
+
+    p {
+        margin-top: 2vh;
+        font-size: 0.75rem;
+        font-weight: 300;
+    }
+
+    .Icons {
+        color: white;
+    }
+
+    #end {
+        // height: 1px;
+        width: 80%;
+        // align-items: center;
+        color: #f5f5f57a;
+        text-align: center;
+        line-height: 80px;
+        margin-left: 10vw;
+        margin-top: 10vh;
+        margin-bottom: 6vh;
+        border-top: 1px solid #f5f5f57a;
+    }
+
+    // #footerLeft:after {
+    //     content: "";
+    //     /* This is necessary for the pseudo element to work. */
+    //     display: block;
+    //     /* This will put the pseudo element on its own line. */
+    //     margin: 0 auto;
+    //     /* This will center the border. */
+    //     width: 80%;
+    //     /* Change this to whatever width you want. */
+    //     padding-top: 30vh;
+    //     /* This creates some space between the element and the border. */
+    //     border-bottom: 1px solid black;
+    // }
+
+}
+
+@media (max-width:577px) {
+    .ant-page-header-heading-title {
+        font-size: .85em;
+        font-weight: 800;
+        color: #454646;
+    }
+
+    .ant-page-header-heading-extra .ant-btn {
+        padding: 5px;
+    }
+
+    .homePageBody {
+        #homePageContent {
+            h2 {
+                font-size: 2.25rem;
+                text-align: center;
+            }
+        }
+    }
+
+    .aboutPageRow {
+        .aboutPageColumn {
+            .aboutDetails {
+                .ant-btn {
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    .contactCard {
+        .contactInput {
+            width: 92%;
+        }
+
+        .contactButton {
+            width: auto;
+        }
+    }
+
+    .Footer {
+        text-align: center;
+
+        #end {
+            font-size: smaller;
+        }
+
+        #footerLeft {
+            text-align: center;
+            margin-top: 10vh;
+        }
+    }
+    .projectImage{
+        #textCol{
+            align-items: center;
+            margin-bottom: 3vh;
+            // border-bottom: 1px solid black;
+        }
+    }
+
+}
