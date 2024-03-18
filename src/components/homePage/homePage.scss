@@ -680,6 +680,17 @@
             text-align: center;
         }
     }
+    .aboutPageRow {
+        .aboutPageColumn {
+            .aboutDetails {
+                display: flex!important;
+                flex-direction: row!important;
+                .ant-btn {
+                    width: auto;
+                }
+            }
+        }
+    }
 
     .aboutPageRow .aboutPageColumn .aboutDetails .ant-btn {
         width: max-content;
