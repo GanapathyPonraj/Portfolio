@@ -272,7 +272,7 @@ function HomePageComponent() {
               <p>{<b>Location : </b>}{About.Location} </p>
               <Button onClick={() => scrollToSection(contactRef)}>Contact</Button>
             </Col>
-            <Col span={10} offset={1} xl={{ span: 10, offset: 1 }} xs={{ span: 24, offset: 0 }}>
+            <Col span={10} offset={1} xl={{ span: 10, offset: 1 }} lg={{span:10,offset:1}} xs={{ span: 24, offset: 0 }}>
               <h2>My skills</h2>
               <div className='skillIcons'>
                 {Techname.map((data) =>
