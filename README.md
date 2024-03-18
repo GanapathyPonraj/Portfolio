@@ -7,3 +7,59 @@
 📚 Education: Master of Engineering - Engineering Management from the University of Ottawa.
 
 🏆 Awards: Timely completion of a million-dollar project and received much appreciation and recognition through INSTANT AWARD for my contribution in the success of the project by INFOSYS.
+
+# 📗 Table of Contents
+
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+
+# 📖 Portfolio <a name="about-project"></a>
+
+## Frontend
+
+The frontend was made with react and can be found [here](https://github.com/GanapathyPonraj/Portfolio)
+
+## 🛠 Built With <a name="built-with"></a>
+
+### Tech Stack <a name="tech-stack"></a>
+
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li>HTML</li>
+    <li>SCSS</li>
+    <li><a href="https://reactjs.org/">React.js</a></li>
+    <li>REST Api</li>
+    <li>REDUX</li>
+    <li>Antd</li>
+    <li>Vercel</li>
+  </ul>
+</details>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://portfolio-tau-three-34.vercel.app/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Ganapathy Ponraj**
+
+- GitHub: [@GanapathyPonraj](https://github.com/GanapathyPonraj)
+- LinkedIn: [@Ganapathy Ponraj](https://www.linkedin.com/in/techieemma/](https://www.linkedin.com/in/ganapathy-ponraj-b58b041a9/)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- [ ] **Adding more prediction days and,weeks,months**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
