@@ -260,7 +260,7 @@ function HomePageComponent() {
       </Row>
       {/* About */}
       <Row className='aboutPageRow' ref={aboutRef}>
-        <Col span={18} offset={3} className='aboutPageColumn'>
+        <Col span={18} offset={3} xl={{span:18,offset:3}} lg={{span:18,offset:3}} xs={{span:22,offset:2}} md={{span:22,offset:2}} className='aboutPageColumn'>
           <h2>ABOUT ME</h2>
           <p> Here you can find more information about me,what I do,<br /> and my current skills and education. </p>
           <Row className='aboutDetails'>
