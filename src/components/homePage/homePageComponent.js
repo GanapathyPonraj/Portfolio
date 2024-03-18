@@ -264,7 +264,7 @@ function HomePageComponent() {
           <h2>ABOUT ME</h2>
           <p> Here you can find more information about me,what I do,<br /> and my current skills and education. </p>
           <Row className='aboutDetails'>
-            <Col span={11} xl={11} lg={11} md={24} sm={24} xs={24}>
+            <Col span={11} xl={11} lg={11} md={12} sm={24} xs={24}>
               <h2>Get to know me!</h2>
               <p>{About.about}</p>
               {/* <p>{About.about}</p> */}
@@ -272,7 +272,7 @@ function HomePageComponent() {
               <p>{<b>Location : </b>}{About.Location} </p>
               <Button onClick={() => scrollToSection(contactRef)}>Contact</Button>
             </Col>
-            <Col span={10} offset={1} xl={{ span: 10, offset: 1 }} lg={{span:10,offset:1}} md={{span:24,offset:0}} sm={{span:24,offset:0}} xs={{ span: 24, offset: 0 }}>
+            <Col span={10} offset={1} xl={{ span: 10, offset: 1 }} lg={{span:10,offset:1}} md={{span:11,offset:1}} sm={{span:24,offset:0}} xs={{ span: 24, offset: 0 }}>
               <h2>My skills</h2>
               <div className='skillIcons'>
                 {Techname.map((data) =>
