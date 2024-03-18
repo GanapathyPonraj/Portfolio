@@ -1,21 +1,33 @@
-import React from 'react'
-import { BackTop, Button, Col, PageHeader, Row, Space, Card, message, Divider } from 'antd'
+import React, { useState } from 'react'
+import { BackTop, Button, Col, PageHeader, Row, Space, Card, message, Divider, Modal, Image } from 'antd'
 import "./homePage.scss"
-import { LinkedinFilled, GithubOutlined, FilePdfOutlined, MessageOutlined } from '@ant-design/icons';
+import { LinkedinFilled, GithubOutlined, FilePdfOutlined, MessageOutlined, DesktopOutlined, MobileOutlined, TabletOutlined, LaptopOutlined } from '@ant-design/icons';
 import contactImage from '../../asets/ContactMe.png';
 import Particle from '../particle';
 import { TypeAnimation } from 'react-type-animation';
 import emailjs from '@emailjs/browser';
 import * as AllLogoImages from '../../asets/index';
+import TruncatedText from '../TruncatedText';
 
+const { useEffect, useRef } = React;
 
-const { useState, useEffect, useRef } = React;
-
-export default function HomePageComponent() {
+function HomePageComponent() {
 
   // const [disabled, setDisabled] = useState(false);
   //For Text-Loop
   const [count, setCount] = useState(1);
+  const [modalContent, setModalContent] = useState();
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     setCount(1);
@@ -48,21 +60,29 @@ export default function HomePageComponent() {
 
   var projectDetails = [
     {
-      img: 'name', projectTitle: 'Forecastify', projectDescription: 'Take the guesswork out of your day with Forecastify! Our weather app offers detailed forecasts for the next 72 hours, giving you peace of mind no matter where you are.',
-      projectSkill: ['HTML', 'CSS', 'REACT'], buttonRedirection: 'name'
+      img: 'name', projectTitle: 'Dream Wheel Exotics', projectShortDescription: 'Unleash your Ultimate Drive With Us',
+      projectDescription: 'Dream Wheel Exotics is a sophisticated Full Stack application that demonstrates my proficiency in both Frontend and Full Stack development. Developed using the MERN stack, the app incorporates advanced features such as JWT authentication for secure user access and WebSocket connections for real-time updates on user favorites. The application is designed to be fully responsive, ensuring optimal user experiences on various devices, including phones, tablets, laptops, and desktops. One of the key highlights of this project is the implementation of RESTful APIs, which enable users to seamlessly create bookings, add and manage their favorite cars, and allow owners to dynamically update car details. This project not only showcases my technical skills but also my ability to create user-centric applications that are both functional and visually appealing.',
+      projectSkill: ['HTML', 'SCSS', 'REACT', 'MongDb', 'REST Api', 'JWT', 'EXPRESS', 'NODE', 'REDUX', 'Antd', 'Render', 'Vercel'], buttonRedirection: 'name', images: [AllLogoImages.home, AllLogoImages.fleet, AllLogoImages.location, AllLogoImages.dates, AllLogoImages.booking, AllLogoImages.account, AllLogoImages.accountFav],
+      imagesPhone: [AllLogoImages.mobileHome, AllLogoImages.mobileAccount], logo: 'DWELogo.png',
+      projectLink: 'https://dream-wheel-exotics-frontend.vercel.app/',
+      mockupImage: AllLogoImages.mockupDesktopCarRental
     },
     {
-      img: 'name', projectTitle: 'Portfolio', projectDescription: 'details',
-      projectSkill: ['HTML', 'CSS'], buttonRedirection: 'name'
+      img: 'name', projectTitle: 'Forecastify', projectShortDescription: 'Where Every Weather Detail Finds Its Place on One Screen.',
+      projectDescription: 'Forecastify is a weather forecast application that I developed to showcase my front-end web development skills. The app allows users to view all essential weather information on a single screen, including current conditions, three-day forecasts, humidity, and wind speed. Designed to be cross-platform compatible, Forecastify delivers a seamless user experience on all devices. Additionally, the app is integrated with external APIs to provide accurate weather data. Through Forecastify, I demonstrate my expertise in creating user-friendly and responsive web applications that offer valuable functionality.',
+      projectSkill: ['HTML', 'SCSS', 'REACT', 'REST Api', 'REDUX', 'Antd', 'Render', 'Vercel'], buttonRedirection: 'name', images: [AllLogoImages.forecastifyDesktop],
+      imagesPhone: [AllLogoImages.forecastifyMobile], logo: AllLogoImages.forecastLogo,
+      projectLink: 'https://forecastify-six.vercel.app/',
+      mockupImage: AllLogoImages.mockupDesktopWeather
     },
     {
-      img: 'name', projectTitle: 'Car Rental', projectDescription: 'details',
-      projectSkill: ['HTML', 'CSS'], buttonRedirection: 'name'
-    },
-    {
-      img: 'name', projectTitle: 'Social Media', projectDescription: 'details',
-      projectSkill: ['HTML', 'CSS'], buttonRedirection: 'name'
-    },
+      img: 'name', projectTitle: 'Real Time Monitoring Dashboard', projectShortDescription: 'Unleash your Ultimate Drive With Us',
+      projectDescription: 'Dream Wheel Exotics is a sophisticated Full Stack application that demonstrates my proficiency in both Frontend and Full Stack development. Developed using the MERN stack, the app incorporates advanced features such as JWT authentication for secure user access and WebSocket connections for real-time updates on user favorites. The application is designed to be fully responsive, ensuring optimal user experiences on various devices, including phones, tablets, laptops, and desktops. One of the key highlights of this project is the implementation of RESTful APIs, which enable users to seamlessly create bookings, add and manage their favorite cars, and allow owners to dynamically update car details. This project not only showcases my technical skills but also my ability to create user-centric applications that are both functional and visually appealing.',
+      projectSkill: ['HTML', 'SCSS', 'REACT', 'MongDb', 'REST Api', 'JWT', 'EXPRESS', 'NODE', 'REDUX', 'Antd', 'Render', 'Vercel'], buttonRedirection: 'name', images: [AllLogoImages.home, AllLogoImages.fleet, AllLogoImages.location, AllLogoImages.dates, AllLogoImages.booking, AllLogoImages.account, AllLogoImages.accountFav],
+      imagesPhone: [AllLogoImages.mobileHome, AllLogoImages.mobileAccount], logo: 'DWELogo.png',
+      projectLink: 'https://dream-wheel-exotics-frontend.vercel.app/',
+      mockupImage: AllLogoImages.mockupDesktopCarRental
+    }
   ]
 
   var Techname = [
@@ -74,19 +94,25 @@ export default function HomePageComponent() {
     { name: 'NodeJS', percentage: 60, src: AllLogoImages.nodejs },
     { name: 'Invision Studio', percentage: 80, src: AllLogoImages.invision },
     { name: 'Python', percentage: 55, src: AllLogoImages.python },
+    { name: 'MongoDb', percentage: 60, src: AllLogoImages.aws },
+    { name: 'Node.JS', percentage: 60, src: AllLogoImages.aws },
+    { name: 'Express.Js', percentage: 60, src: AllLogoImages.aws },
     { name: 'Figma', percentage: 85, src: AllLogoImages.figma },
+    { name: 'Adobe Photoshop', percentage: 60, src: AllLogoImages.aws },
+    { name: 'Adobe Premier Pro', percentage: 60, src: AllLogoImages.aws },
+    { name: 'Final Cut Pro', percentage: 60, src: AllLogoImages.aws },
     { name: 'Jest', percentage: 75, src: AllLogoImages.jest },
     { name: 'AWS', percentage: 60, src: AllLogoImages.aws }
 
   ]
 
   var About = {
-    about: <p>Versatile UI Engineer with 3+ years of experience in designing, developing, and managing complex web & mobile apps.
+    about: <p>Versatile Software Engineer with 5+ years of experience in designing, developing, and managing complex web & mobile apps and a Master's degree in Engineering Management.
       A self-driven and highly motivated Frontend Engineer passionate about solving complex problems and being creative,
       who loves to obtain a position as a Front-End Software Developer in a fast-paced environment where learning is nonstop,
       and the tasks are as complex as the previous day of work.</p>,
     Education: ' Masters in Engineering Management,University of Ottawa,2022 ',
-    Hobbies: 'Filmaking,Photography,Hiking,Motorsports',
+    Hobbies: 'Filmaking,Photography,Hiking,Motorsports,Biking',
     Location: 'Ottawa,Canada'
   }
   //navigateToURL
@@ -95,6 +121,16 @@ export default function HomePageComponent() {
   };
 
   const form = useRef();
+  useEffect(() => {
+    ModalOpen()
+  }, [modalContent])
+
+  const openProject = (data) => {
+    data.openModal = true
+    setModalContent(data)
+    setIsModalOpen(true)
+  }
+
   const contactsendEmail = (e) => {
     e.preventDefault();
 
@@ -113,15 +149,88 @@ export default function HomePageComponent() {
       });
   };
 
+  const ModalOpen = () => {
+    return (
+      <Modal centered width={'60vw'} footer={null}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        key={modalContent ? modalContent.projectTitle : ''}
+        visible={isModalOpen}
+        className='projectModal'
+      >
+        {modalContent ?
+          <div>
+            <Row id='headerRow'>
+              <Col span={5} offset={1} id='logoImage'>
+                <img src={modalContent.logo} alt={modalContent.logo} id='logoImage' />
+              </Col>
+              <Col span={14} offset={2}>
+                <h1 id='header'>{modalContent.projectTitle}</h1>
+                <h2 id='shortDescription'>{modalContent.projectShortDescription}</h2>
+                <Button id='viewProjectButton' onClick={() => {
+                  window.open(modalContent.projectLink, '_blank');
+                }}>View Live Project</Button>
+              </Col>
+            </Row>
+            {/* <Row> */}
+            <Row id='description'>
+              <div><h1 id='innerHeader'>Description</h1></div>
+              <div>
+                <TruncatedText text={modalContent.projectDescription} maxHeight={200} />
+              </div>
+              {/* <h2>{modalContent.projectDescription}</h2> */}
+            </Row>
+            <h1 id='innerHeader'>Preview</h1>
+            <h1 id='innerHeader1'><DesktopOutlined /> Desktop | <LaptopOutlined /> Laptop | <TabletOutlined /> Tablet</h1>
+            <Row id='deviceRow'>
+              {modalContent.images.map((data) => {
+                return <Image src={data} alt={data} id='deviceImages' />
+              })
+              }
+            </Row>
+            <h1 id='innerHeader1'><MobileOutlined /> Phone</h1>
+            <Row id='deviceRow'>
+              {modalContent.imagesPhone.map((data) => {
+                return <Image src={data} alt={data} id='deviceImages' />
+              })
+              }
+            </Row>
+            {/* </Row> */}
+
+            <Row>
+              <Col span={24}>
+                <h1 id='innerHeader' className='techStackHeader'>Tech Stack Used</h1>
+                <Row className='skillIcons2'>
+                  {modalContent.projectSkill.map((data) => {
+                    return <span>{data}</span>
+                  })
+                  }</Row>
+              </Col>
+            </Row>
+            {/* <h1 id='innerHeader' className='viewProjectsHeader'>View Other Projects</h1>
+            <Row id='deviceRow'>
+              {modalContent.images.map((data) => {
+                return <Image src={data} alt={data} id='deviceImages' />
+              })
+              }
+            </Row> */}
+          </div>
+          : ''
+        }
+      </Modal>
+    )
+  }
+
   return (
     <div>
-      <PageHeader ghost={true} className='pageHeader' title="Ganapathy P."
-        extra={[
-          <Button key='Home' className='pageHeader' onClick={() => scrollToSection(homeRef)} >Home</Button>,
-          <Button key='About' onClick={() => scrollToSection(aboutRef)} className='pageHeader'>About</Button>,
-          <Button key='Projects' className='pageHeader' onClick={() => scrollToSection(projectRef)}>Projects</Button>,
-          <Button key='Contact' className='pageHeader' onClick={() => scrollToSection(contactRef)}>Contact</Button>,
-        ]} />
+      {ModalOpen()}
+          <PageHeader ghost={true} className='pageHeader' title="Ganapathy P."
+            extra={[
+              <Button key='Home' className='pageHeader' onClick={() => scrollToSection(homeRef)} >Home</Button>,
+              <Button key='About' onClick={() => scrollToSection(aboutRef)} className='pageHeader'>About</Button>,
+              <Button key='Projects' className='pageHeader' onClick={() => scrollToSection(projectRef)}>Projects</Button>,
+              <Button key='Contact' className='pageHeader' onClick={() => scrollToSection(contactRef)}>Contact</Button>,
+            ]} />
       {/* Header */}
       <Row className='homePageBody'>
         <Particle />
@@ -130,16 +239,17 @@ export default function HomePageComponent() {
             <h2 className="Name" > Hello,I'm Ganapathy Ponraj </h2>
             <TypeAnimation
               className='type'
-              sequence={['Data Analyst', 4000, 'Sales Analyst', 4000, 'Engineering Management Graduate', 4000]}
+              sequence={['Frontend Developer', 4000, 'Upcoming Full Stack Developer', 4000, 'Engineering Management Graduate', 4000, 'Technology Consultant', 4000]}
               speed={40}
               repeat={Infinity}
             />
             <Button key="ViewButton" className='viewButton' onClick={() => scrollToSection(projectRef)}>View My Work</Button>
+            {/* <Button key="ViewButton" className='viewButton' onClick={() => scrollToSection(projectRef)}>View My Work</Button> */}
           </Row>
           <Row id='homePageFooter'>
 
             <Card>
-              <Space split={<Divider type="vertical" />} size={15} className='Icons' ><GithubOutlined onClick={() => openInNewTab("https://github.com/ganapathy46/")} /><LinkedinFilled onClick={() => openInNewTab("https://www.linkedin.com/in/ganapathy-ponraj-b58b041a9/")} />
+              <Space split={<Divider type="vertical" />} size={15} className='Icons' ><GithubOutlined onClick={() => openInNewTab("https://github.com/GanapathyPonraj")} /><LinkedinFilled onClick={() => openInNewTab("https://www.linkedin.com/in/ganapathy-ponraj-b58b041a9/")} />
                 <FilePdfOutlined onClick={() => onResumeButtonClick()} /><MessageOutlined onClick={() => scrollToSection(contactRef)} />
               </Space>
             </Card>
@@ -157,12 +267,12 @@ export default function HomePageComponent() {
             <Col span={11} xl={11} xs={24}>
               <h2>Get to know me!</h2>
               <p>{About.about}</p>
-              <p>{About.about}</p>
+              {/* <p>{About.about}</p> */}
               <p>{<b>Hobbies : </b>}{About.Hobbies}</p>
               <p>{<b>Location : </b>}{About.Location} </p>
               <Button onClick={() => scrollToSection(contactRef)}>Contact</Button>
             </Col>
-            <Col span={10} offset={1} xl={{span:10,offset:1}} xs={{span:24,offset:0}}>
+            <Col span={10} offset={1} xl={{ span: 10, offset: 1 }} xs={{ span: 24, offset: 0 }}>
               <h2>My skills</h2>
               <div className='skillIcons'>
                 {Techname.map((data) =>
@@ -170,35 +280,45 @@ export default function HomePageComponent() {
                 )}
               </div>
               <h2>Education</h2>
-              <p><b>Master's in Engineering Management</b></p>
-              <p>University of Ottawa , ON</p>
-              <p>September 2020 - June 2022</p>
+              <Row id='education'>
+                <Col span={12} xl={12} lg={12} xs={24} md={12} id='educationCol'>
+                  <p><b>Master's in Engineering Management</b></p>
+                  <p>University of Ottawa, Ontario</p>
+                  <p>September 2020 - June 2022</p>
+                </Col>
+                <Col span={12} xl={12} lg={12} xs={24} md={12} id='educationCol'>
+                  <p className='bachelorsColumn'><b>Bachelors's in Mechanical Engineering</b></p>
+                  <p>Mepco Schlenk Engineering college</p>
+                  <p>September 2014 - June 2018</p>
+                </Col>
+              </Row>
             </Col>
           </Row>
         </Col>
         <Col span={3} />
       </Row>
 
+
       {/* Projects */}
       <Row ref={projectRef}>
-        <Col span={18} offset={3} className='projectImage'>
+        <Col span={18} offset={3}  xl={{span:18,offset:3}} lg={{span:18,offset:3}} xs={{span:24,offset:0}} className='projectImage'>
           <div className='projectHeading'>
             <h2>PROJECTS</h2>
             <p> Here you can find more information about me,what I do,<br /> and my current skills and education. </p>
           </div>
           <Card >
             {projectDetails.map((data) =>
-              <Row>
+              <Row className='projectRowInner'>
                 <Col span={12} xl={12} xs={24} id='projectCol1'>
-                  <img src='laptopMockup.png' alt='laptopScreen' />
+                  <img src={data.mockupImage} alt={data.mockupImage} />
                 </Col>
-                <Col span={10} offset={1} xl={{span:10,offset:1}} xs={{span:24,offset:0}} id='textCol'>
+                <Col span={10} offset={1} xl={{ span: 10, offset: 1 }} xs={{ span: 24, offset: 0 }} id='textCol'>
                   <h2>{data.projectTitle}</h2>
                   <p>{data.projectDescription}</p>
                   <div className='skillIcons1'>
                     {data.projectSkill.map((data) => <span>{data}</span>)}
                   </div>
-                  <Button>View Project</Button>
+                  <div id='viewProjectButton'><Button onClick={() => { openProject(data) }}>View Project</Button></div>
                 </Col>
               </Row>
             )}
@@ -242,9 +362,9 @@ export default function HomePageComponent() {
           <Row>
             <Col span={11} xl={11} xs={24}>
               <h2>GANAPATHY PONRAJ</h2>
-              <p>A Frontend focused Web Developer building the Frontend of Website and Web Applications that leads to the<br/> success of the overall product</p>
+              <p>A Frontend focused Web Developer building the Frontend of Website and Web Applications that leads to the<br /> success of the overall product</p>
             </Col>
-            <Col span={5} offset={8} xl={{span:5,offset:8}} xs={{span:24,offset:0}} id='footerLeft'>
+            <Col span={5} offset={8} xl={{ span: 5, offset: 8 }} xs={{ span: 24, offset: 0 }} id='footerLeft'>
               <h2>SOCIAL</h2>
               <Space split={<Divider type="vertical" />} size={15} className='Icons' ><GithubOutlined onClick={() => openInNewTab("https://github.com/ganapathy46/")} /><LinkedinFilled onClick={() => openInNewTab("https://www.linkedin.com/in/ganapathy-ponraj-b58b041a9/")} />
                 <FilePdfOutlined onClick={() => onResumeButtonClick()} /><MessageOutlined onClick={() => scrollToSection(contactRef)} />
@@ -261,3 +381,4 @@ export default function HomePageComponent() {
 
   )
 }
+export default HomePageComponent

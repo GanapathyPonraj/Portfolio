@@ -13,6 +13,9 @@
     font-size: 1.25em;
 
 }
+// .aboutPageRow .aboutPageColumn .aboutDetails p{
+//     text-align: center!important;
+// }
 
 .ant-page-header-heading-extra .ant-btn {
     // color: white;
@@ -46,7 +49,11 @@
     font-size: 1rem;
 }
 
-
+.bachelorsColumn {
+    b {
+        word-spacing: initial !important;
+    }
+}
 
 //Project
 
@@ -112,8 +119,148 @@
     border-color: #7626fb;
 }
 
+.techStackHeader {
+    margin-top: 4vh;
+    padding-bottom: 1vh;
+}
 
+.projectModal {
+    .ant-modal-content {
+        height: 90vh;
+        border-radius: 20px;
+        overflow-y: scroll;
+    }
 
+    .viewProjectsHeader {
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+    }
+
+    .skillIcons2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: 3vw;
+
+        span {
+            margin: 16px;
+            margin-top: 0px;
+            margin-left: 0px;
+            background-color: #ececec70;
+            padding: 8px 15px;
+            font-size: 1.1em;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border-radius: 7px;
+        }
+    }
+
+    #description {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #headerRow {
+        border-bottom: 1px solid lightgrey;
+        padding-bottom: 5vh;
+        margin-bottom: 2vh;
+
+        #logoImage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 1vh;
+        }
+    }
+
+    #innerHeader {
+        font-size: 2em;
+        font-weight: 600;
+        color: #7a7a7a;
+    }
+
+    #innerHeader1 {
+        display: flex;
+        align-items: center;
+        font-size: 1.25em;
+        margin-bottom: 3vh;
+        margin-top: 3vh;
+        color: #6b6b6b;
+
+        .anticon {
+            margin-left: 1vw;
+            margin-right: 1vw;
+        }
+    }
+
+    #logoImage {
+        height: 75%;
+        width: 63%;
+    }
+
+    #header {
+        font-size: 3em;
+        font-weight: 600;
+        margin-top: 1vh;
+        color: #7626fb;
+    }
+
+    #viewProjectButton {
+        background-color: #7626fb;
+        color: white;
+        border-radius: 5px;
+        font-size: 1.25em;
+        height: auto;
+    }
+
+    #shortDescription {
+        font-size: 1.25em;
+        font-weight: 400;
+        color: #8a8a8a;
+        margin-bottom: 2vh;
+    }
+
+    #deviceRow {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow: scroll;
+
+        #deviceImages {
+            .ant-image-img {
+                height: 40vh;
+                width: 35vw;
+                margin-left: 3vw;
+                border-radius: 13px;
+            }
+        }
+
+        .ant-image-mask:hover {
+            width: 92%;
+            margin-left: 3vw;
+        }
+    }
+}
+
+.truncated-text {
+    p {
+        font-size: 1.35em;
+        color: #4b4b4b;
+    }
+
+    #buttonReadMore {
+        text-align: end;
+    }
+}
+
+.read-more-btn {
+    background-color: #7626fb;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.25em;
+    height: auto;
+}
 
 // HomePage
 
@@ -192,6 +339,10 @@
     z-index: 10;
 }
 
+.projectRowInner {
+    margin-bottom: 5vh;
+}
+
 //About
 .aboutPageRow {
     // display: flex;
@@ -221,13 +372,17 @@
 
             p {
                 text-align: justify;
-                font-size: 0.8rem;
+                font-size: 1.15em;
                 font-weight: 400;
                 color: #625959;
-                word-spacing: 2px;
-                line-height: 26px;
+                // word-spacing: 2px;
+                // line-height: 26px;
             }
-
+            #education{
+                p{
+                    text-align: left!important;
+                }
+            }
             .ant-btn {
                 background-color: #9029fb;
                 color: white;
@@ -371,6 +526,7 @@
     img {
         height: 100%;
         width: 80%;
+        object-fit: scale-down;
     }
 
 }
@@ -509,7 +665,73 @@
 
 }
 
-@media (max-width:577px) {
+//Tablet
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .homePageBody #homePageContent h2 {
+        text-align: center;
+    }
+
+    .aboutDetails {
+        text-align: center;
+    }
+    .projectRowInner{
+        #viewProjectButton{
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .aboutPageRow .aboutPageColumn .aboutDetails .ant-btn {
+        width: max-content;
+    }
+
+    .aboutPageRow .aboutPageColumn .aboutDetails p {
+        text-align: left;
+    }
+
+    .ant-modal-centered .ant-modal {
+        width: 85vw !important;
+    }
+
+    .projectImage #textCol h2 {
+        margin-top: 5vh;
+    }
+
+    .truncated-text p {
+        font-size: 1em;
+    }
+
+    .read-more-btn {
+        font-size: 1em;
+    }
+
+    .projectModal #deviceRow #deviceImages .ant-image-img {
+        height: 40vh;
+        width: 75vw;
+    }
+
+    .projectModal {
+        #header {
+            font-size: 1.5em;
+        }
+
+        #shortDescription {
+            font-size: 1em;
+        }
+
+        #viewProjectButton {
+            font-size: 1em;
+        }
+
+        #innerHeader {
+            font-size: 1.5em;
+        }
+    }
+
+}
+
+//potrait phone 
+@media (min-width:350px) and (max-width:577px) {
     .ant-page-header-heading-title {
         font-size: .85em;
         font-weight: 800;
@@ -519,7 +741,13 @@
     .ant-page-header-heading-extra .ant-btn {
         padding: 5px;
     }
-
+    .aboutDetails{
+        #educationCol{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
     .homePageBody {
         #homePageContent {
             h2 {
@@ -539,6 +767,9 @@
         }
     }
 
+    // .aboutPageRow .aboutPageColumn .aboutDetails p{
+    //     word-spacing: 0px!important;
+    // }
     .contactCard {
         .contactInput {
             width: 92%;
@@ -561,12 +792,108 @@
             margin-top: 10vh;
         }
     }
-    .projectImage{
-        #textCol{
+
+    .projectImage {
+        #textCol {
             align-items: center;
             margin-bottom: 3vh;
+            text-align: center;
+
             // border-bottom: 1px solid black;
+            h2 {
+                margin-top: 3vh;
+                font-size: 2em;
+                font-weight: 700;
+            }
+        }
+
+        .skillIcons1 {
+            justify-content: center;
         }
     }
+
+    .ant-page-header-compact .ant-page-header-heading {
+        display: flex;
+        justify-content: center;
+    }
+
+    .homePageBody #homePageContent .type {
+        height: 10vh;
+        text-align: center;
+    }
+
+    .aboutPageColumn {
+        text-align: center;
+    }
+
+    .aboutPageRow .aboutPageColumn .aboutDetails .skillIcons {
+        justify-content: center;
+    }
+
+    .projectImage img {
+        width: 100%;
+    }
+
+    .projectImage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .ant-card {
+            width: 95vw;
+        }
+    }
+
+    //projectModal
+    .ant-modal-centered .ant-modal {
+        width: 90vw !important;
+    }
+
+    .truncated-text p {
+        font-size: 1em;
+    }
+
+    .read-more-btn {
+        font-size: 1em;
+    }
+
+    .projectModal #deviceRow #deviceImages .ant-image-img {
+        height: 30vh;
+        width: 100vw;
+    }
+
+    .projectModal {
+        #header {
+            font-size: 1.5em;
+        }
+
+        #shortDescription {
+            font-size: 1em;
+        }
+
+        #viewProjectButton {
+            font-size: 1em;
+        }
+
+        #logoImage {
+            height: auto;
+            width: 100%;
+        }
+
+        #innerHeader {
+            font-size: 1.5em;
+        }
+
+        #innerHeader1 {
+            font-size: 1em;
+        }
+
+        .skillIcons2 span {
+            font-size: 1em;
+        }
+    }
+
+
+
 
 }
