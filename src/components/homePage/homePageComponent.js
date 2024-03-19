@@ -49,10 +49,10 @@ function HomePageComponent() {
   //   setDisabled(checked);
   // };
   const onResumeButtonClick = () => {
-    const pdfUrl = "Ganapathy.pdf";
+    const pdfUrl = "/resume/GanapathyPonraj-Resume-FrontEnd.pdf";
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "Ganapathy_Ponraj-FrontendDeveloper.pdf"; // specify the filename
+    link.download = "GanapathyPonraj-Resume-FrontEnd.pdf"; // specify the filename
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
